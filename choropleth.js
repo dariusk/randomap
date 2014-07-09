@@ -21,8 +21,6 @@ var fixedx = function(x) { return d3.format(".0f")(km_to_m*x);}
 // NB: Change your number format function here:
 var format = percent;
 var formatx = percentx;
-
-
 var width = window.innerWidth;
 var height = window.innerHeight;
 
@@ -94,7 +92,7 @@ d3.json("county_codes.json", function(json) {
 d3.json("data.json", function(json) {
     data = json;
    _.each(data, function(v, k) {
-     data[k] = Math.random()});
+     data[k] = +k/80000 + (Math.random()*0.5-0.25)});
 
     populate_stats(data);
 
